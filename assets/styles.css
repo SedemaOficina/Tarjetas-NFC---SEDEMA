@@ -1,0 +1,275 @@
+/* =====================================================================
+   Tarjetas digitales NFC — SEDEMA / Oficina de la Secretaría
+   Hoja compartida por TODAS las tarjetas. No editar por persona.
+   Paleta institucional: guinda #9d2148 · dorado #b28e5c
+   ===================================================================== */
+
+:root {
+  --guinda: #9d2148;
+  --guinda-oscuro: #7a1836;
+  --dorado: #b28e5c;
+  --gris: #55585a;
+  --blanco: #ffffff;
+  --radio: 12px;
+  --ancho: 500px;
+  --fuente-titulo: 'Cabin', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --fuente-cuerpo: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-cuerpo);
+  background: var(--blanco);
+  color: #222;
+  overscroll-behavior-y: none;
+}
+
+img { max-width: 100%; }
+
+/* Accesibilidad: foco visible para navegación por teclado */
+a:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 3px;
+}
+
+/* ---------- Encabezado ---------- */
+.top-bar {
+  position: sticky; top: 0; z-index: 99;
+  height: 70px;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--dorado);
+  display: flex; justify-content: center; align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.top-bar img { height: 50px; width: auto; }
+
+/* ---------- Portada ---------- */
+.hero {
+  background-color: var(--guinda);
+  background-image: url('patron_rojo.jpg');
+  background-size: 110%;
+  background-position: center;
+  color: #fff;
+  padding-top: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap { max-width: var(--ancho); margin: 0 auto; padding: 0 20px; }
+
+.hero-content {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+.textos { min-width: 0; }
+.textos h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem; line-height: 1.1;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+.badge {
+  display: inline-block; background: var(--dorado);
+  padding: 4px 8px; border-radius: 4px;
+  font-weight: 700; font-size: .8rem;
+  text-transform: uppercase; letter-spacing: .02em;
+  margin-bottom: 5px;
+}
+.org { margin: 0; font-size: .9rem; opacity: .9; }
+
+.avatar {
+  width: 100px; height: 100px; flex-shrink: 0;
+  border-radius: 50%; border: 3px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+/* Respaldo cuando la persona aún no tiene fotografía */
+.avatar-iniciales {
+  width: 100px; height: 100px; flex-shrink: 0;
+  border-radius: 50%; border: 3px solid #fff;
+  background: var(--guinda-oscuro);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--fuente-titulo);
+  font-size: 2.1rem; font-weight: 700; color: #fff;
+  letter-spacing: .02em;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.curve svg { display: block; width: 100%; height: auto; }
+
+/* ---------- Acciones ---------- */
+.actions-bg { padding: 10px 0 20px; }
+.actions { display: flex; flex-direction: column; gap: 15px; }
+
+/* Rejilla de acciones de contacto: dos columnas fijas.
+   Si el último botón queda solo en su renglón, ocupa el ancho completo.
+   Así, con uno, dos, tres o cuatro botones nunca queda media celda vacía. */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.grid-auto > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  text-decoration: none;
+  background: #fff; border: 2px solid var(--guinda);
+  color: var(--guinda); padding: 14px; border-radius: var(--radio);
+  font-weight: 700; font-size: .95rem;
+  font-family: inherit; appearance: none;
+  transition: transform .05s, background .1s;
+  cursor: pointer;
+}
+.btn:active { transform: scale(.96); background: #f0f0f0; }
+
+.btn-primary {
+  background: var(--guinda); color: #fff; border: none;
+  justify-content: flex-start; text-align: left; padding: 16px;
+  box-shadow: 0 5px 15px rgba(157,33,72,.3);
+}
+.btn-primary:active { background: var(--guinda-oscuro); }
+
+.icon-box {
+  background: rgba(255,255,255,.2);
+  width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.icon-box svg { width: 24px; color: #fff; }
+.btn-text { display: flex; flex-direction: column; }
+.btn-text .title { font-size: 1.1rem; }
+.btn-text .subtitle { font-size: .8rem; font-weight: 400; opacity: .9; }
+/* Los íconos toman el color del botón que los contiene, aunque el SVG traiga
+   su propio atributo fill. Así todo el set queda en guinda sin editar paths. */
+.icon, .icon path { fill: currentColor; }
+.icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* ---------- Redes sociales ---------- */
+/* Fila de píldoras centradas. Solo aparecen las redes que la persona tenga;
+   si no tiene ninguna, la fila completa desaparece del HTML publicado.
+   Cada píldora acepta un <svg class="social-icon"> opcional antes del texto. */
+.social-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);   /* 2 redes, y 4 como 2 x 2 */
+  margin-top: 4px;
+}
+/* Una sola red: no se estira de lado a lado, se centra a media anchura. */
+.social-row:has(> :only-child) {
+  grid-template-columns: minmax(130px, 58%);
+  justify-content: center;
+}
+/* Exactamente tres: caben en un solo renglón, sin dejar una celda vacía. */
+.social-row:has(> :nth-child(3)):not(:has(> :nth-child(4))) {
+  grid-template-columns: repeat(3, 1fr);
+}
+.social-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--guinda);
+  background: #fff;
+  color: var(--guinda);
+  font-family: inherit; font-weight: 700; font-size: .84rem;
+  text-decoration: none; white-space: nowrap;
+  transition: transform .05s, background .1s;
+}
+.social-btn:active { transform: scale(.94); background: #f0f0f0; }
+/* El ícono hereda el guinda del botón aunque el SVG pegado traiga su propio
+   atributo fill, para no tener que editarlo a mano. */
+.social-icon,
+.social-icon path,
+.social-icon circle,
+.social-icon rect { fill: currentColor; }
+.social-icon { width: 18px; height: 18px; flex-shrink: 0; display: block; }
+
+.social-titulo {
+  text-align: center;
+  font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+  color: #999; margin: 26px 0 12px;
+}
+
+/* ---------- Corazón ---------- */
+.heart-container { text-align: center; margin-top: 35px; }
+.hero-heart {
+  width: 130px; height: auto; margin: 0 auto;
+  cursor: pointer; display: block;
+}
+.hero-heart:active { transform: scale(.9); transition: .05s; }
+.tap-hint {
+  color: #999; font-size: .8rem; text-transform: uppercase;
+  letter-spacing: .04em; margin-top: 10px; display: block;
+}
+
+/* ---------- Pie ---------- */
+.footer {
+  text-align: center; margin: 40px 0 20px;
+  color: #888; font-size: .85rem;
+  border-top: 1px solid #eee; padding-top: 20px;
+}
+.footer p { margin: 4px 0; }
+.footer .footer-sub { font-size: .75rem; opacity: .7; }
+
+/* =====================================================================
+   ANIMACIONES
+   Estado base: TODO VISIBLE. Las animaciones solo ocultan y revelan
+   cuando el dispositivo las permite. Si el navegador ignora esta hoja
+   o la persona pidió menos movimiento, la tarjeta se ve completa —
+   nunca en blanco.
+   ===================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .animate-in  { opacity: 0; animation: fadeIn  .6s ease-out forwards; }
+  .animate-up  { opacity: 0; animation: slideUp .6s ease-out forwards; }
+  .animate-pop { opacity: 0; animation: popIn   .5s cubic-bezier(.175,.885,.32,1.275) forwards; }
+
+  /* La portada encadena dos animaciones: entra y luego respira.
+     Declararlas juntas evita que una anule a la otra. */
+  .hero.animate-in {
+    animation: fadeIn .6s ease-out forwards,
+               moveBackground 20s ease-in-out 1s infinite alternate;
+  }
+
+  .hero-heart { animation: beat 3s infinite ease-in-out; }
+  .hero-heart.thump { animation: thump .3s ease-out; }
+
+  .delay-1 { animation-delay: .1s; }
+  .delay-2 { animation-delay: .2s; }
+  .delay-3 { animation-delay: .3s; }
+  .delay-4 { animation-delay: .4s; }
+  .delay-5 { animation-delay: .5s; }
+  .delay-6 { animation-delay: .6s; }
+  .delay-7 { animation-delay: .7s; }
+  .delay-8 { animation-delay: .8s; }
+  .delay-9 { animation-delay: .9s; }
+
+  /* La portada lleva dos animaciones; el retardo aplica solo a la entrada. */
+  .hero.animate-in.delay-2 { animation-delay: .2s, 1s; }
+}
+
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes popIn   { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: none; } }
+@keyframes moveBackground { 0% { background-position: center top; } 100% { background-position: center bottom; } }
+@keyframes beat  { 0%,100% { transform: scale(1); } 10% { transform: scale(1.05); } 20% { transform: scale(1); } }
+@keyframes thump { 0% { transform: scale(.9); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+/* ---------- Directorio interno (index de la raíz) ---------- */
+.dir { max-width: var(--ancho); margin: 0 auto; padding: 24px 20px 60px; }
+.dir h1 { font-family: var(--fuente-titulo); color: var(--guinda); font-size: 1.5rem; margin: 0 0 4px; }
+.dir .dir-sub { color: var(--gris); font-size: .9rem; margin: 0 0 22px; }
+.dir ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.dir a {
+  display: block; padding: 13px 15px; border-radius: var(--radio);
+  border: 1px solid #e7dcdf; text-decoration: none; color: #222;
+  background: #fff;
+}
+.dir a:active { background: #f7f1f3; }
+.dir .dir-cargo { display: block; font-size: .82rem; color: var(--gris); margin-top: 2px; }
