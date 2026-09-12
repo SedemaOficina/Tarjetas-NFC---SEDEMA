@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Jimenez;Emmanuel;;;
+FN:Emmanuel Jimenez Jimenez
+ORG:Secretaría del Medio Ambiente de la Ciudad de México;Oficina de la Secretaría de Medio Ambiente
+TEL;TYPE=WORK,VOICE:+525518032002
+EMAIL;TYPE=INTERNET,WORK:emmjimenez2@gmail.com
+item1.IMPP;X-SERVICE-TYPE=WhatsApp:x-apple:+525518032002
+item1.X-ABLabel:WhatsApp
+REV:20260912T011232Z
+END:VCARD
