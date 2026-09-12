@@ -1,9 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
 N:Álvarez;Julia;;;
-FN:Julia Alvarez Icaza Ramírez
-ORG:Secretaría del Medio Ambiente de la Ciudad de México;Oficina de la Secretaría de Medio Ambiente
-TITLE:Secretaría del Medio Ambiente de la Ciudad de México
+FN:Julia Álvarez Icaza Ramírez
+ORG:Secretaría del Medio Ambiente de la Ciudad de México;Secretaría del Medio Ambiente
+TITLE:Secretaria del Medio Ambiente
 TEL;TYPE=WORK,VOICE:+525544416261
 EMAIL;TYPE=INTERNET,WORK:oficinasecretaria.sedema@gmail.com
 X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/profile.php?id=61567920074138
@@ -11,5 +11,5 @@ X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/juliaalvarezicaza/?hl=e
 X-SOCIALPROFILE;TYPE=twitter:https://x.com/Jualicra?s=20
 item1.IMPP;X-SERVICE-TYPE=WhatsApp:x-apple:+525544416261
 item1.X-ABLabel:WhatsApp
-REV:20260912T002446Z
+REV:20260912T010840Z
 END:VCARD
