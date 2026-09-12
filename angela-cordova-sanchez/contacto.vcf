@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Córdova;Angela;;;
+FN:Angela Córdova Sánchez
+ORG:Secretaría del Medio Ambiente de la Ciudad de México;Oficina de la Secretaría de Medio Ambiente
+TITLE:Secretaria Particular
+TEL;TYPE=WORK,VOICE:+525544732549
+EMAIL;TYPE=INTERNET,WORK:oficinasecretaria.sedema@gmail.com
+item1.IMPP;X-SERVICE-TYPE=WhatsApp:x-apple:+525544732549
+item1.X-ABLabel:WhatsApp
+REV:20260912T011214Z
+END:VCARD
