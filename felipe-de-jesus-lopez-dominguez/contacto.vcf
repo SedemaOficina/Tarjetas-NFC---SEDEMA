@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:López;Felipe;;;
+FN:Felipe de Jesús López Domínguez
+ORG:Secretaría del Medio Ambiente de la Ciudad de México;Oficina de la Secretaría de Medio Ambiente
+TITLE:SIA CDMX
+TEL;TYPE=WORK,VOICE:+525532357056
+EMAIL;TYPE=INTERNET,WORK:felipe.sedema.cdmx@gmail.com
+item1.IMPP;X-SERVICE-TYPE=WhatsApp:x-apple:+525532357056
+item1.X-ABLabel:WhatsApp
+REV:20261120T010016Z
+END:VCARD
